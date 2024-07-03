@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $start_datetime = dateTimeFormat($_POST['start_datetime']);
     $end_datetime = dateTimeFormat($_POST['end_datetime']);
+
     $client = new Google_Client();
     $client->setAuthConfig('./credentials.json');
     $client->addScope(Google_Service_Calendar::CALENDAR);
@@ -34,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $calendarId = 'primary';
-        $event = $service->events->insert($calendarId, $event);
+        $event = $service->events->insert($calendarId, $event); //creating new event
         $_SESSION['message'] = 'Event Added Successfully';
         $_SESSION['msg_type'] = 'success';
         header('Location: index.php');

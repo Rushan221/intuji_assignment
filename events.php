@@ -57,7 +57,13 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
                     <tr>
                         <td><?php echo htmlspecialchars($event->getSummary() ?? ''); ?></td>
                         <td><?php echo htmlspecialchars($event->getDescription() ?? ''); ?></td>
-                        <td><a href="#" class="btn btn-danger btn-sm">Delete</a></td>
+                        <td>
+                            <form action="./delete_event.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this event?');">
+                                <input type="hidden" name="event_id" value="<?php echo $event->getId();?>">
+                                <button type="submit" class="btn btn-danger">Delete Event</button>
+                            </form>
+
+                        </td>
                     </tr>
                     <?php
                 }

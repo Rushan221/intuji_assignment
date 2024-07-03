@@ -23,6 +23,7 @@
                 <input type="datetime-local" class="form-control" id="end_datetime" name="end_datetime" required>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
+            <a href="../../events.php" class="btn btn-danger">Back</a>
         </form>
     </div>
 </div>

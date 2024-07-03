@@ -14,7 +14,7 @@
 
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/index.php"><i class="fa-brands fa-google"></i> Google Calendar</a>
+        <a class="navbar-brand" href="/index.php"><i class="fa-brands fa-google"></i> &nbsp; Google Calendar App</a>
     </div>
 </nav>
 

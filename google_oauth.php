@@ -28,10 +28,9 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     $_SESSION['message'] = 'Google account authenticated successfully!';
     $_SESSION['msg_type'] = 'success';
     header('Location: events.php');
-    exit();
 } else {
     $authUrl = $client->createAuthUrl();
     header('Location: ' . filter_var($authUrl, FILTER_SANITIZE_URL));
-    exit();
 }
+exit();
 

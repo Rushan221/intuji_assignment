@@ -19,6 +19,19 @@
 </nav>
 
 <main class="container mt-5">
+<?php
+if (isset($_SESSION['message'])): ?>
+    <!--alert div-->
+    <div class="alert alert-<?php echo $_SESSION['msg_type']; ?> alert-dismissible fade show" role="alert">
+        <?php echo $_SESSION['message']; ?>
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+    // Unset the session message after use
+    unset($_SESSION['message']);
+    unset($_SESSION['msg_type']);
+endif;
+?>
 
 
 

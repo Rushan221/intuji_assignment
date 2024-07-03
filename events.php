@@ -1,8 +1,8 @@
 <?php
-include './assets/views/header.php';
-
 
 require './include.main.files.php';
+include './assets/views/header.php';
+
 
 $client = new Google_Client();
 $client->setAuthConfig('./credentials.json');
@@ -35,7 +35,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     ?>
     <div class="card">
         <div class="card-header"><h3>Your Upcoming Events</h3>
-            <a href="#" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i> Add an Event</a>
+            <a href="./assets/views/form.php" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i> Add an Event</a>
         </div>
         <?php
         if (count($results->getItems()) == 0) {

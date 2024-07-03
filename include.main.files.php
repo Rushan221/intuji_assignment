@@ -10,3 +10,9 @@ session_start();
     print_r($data);
     die();
 }
+
+function dateTimeFormat($datetime): string
+{
+    $date = new DateTime($datetime);
+    return $date->format('Y-m-d\TH:i:s');
+}

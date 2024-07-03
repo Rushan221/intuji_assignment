@@ -25,6 +25,8 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         $client->fetchAccessTokenWithRefreshToken($refreshToken);
         $_SESSION['access_token'] = $client->getAccessToken();
     }
+    $_SESSION['message'] = 'Google account authenticated successfully!';
+    $_SESSION['msg_type'] = 'success';
     header('Location: events.php');
     exit();
 } else {

@@ -26,9 +26,17 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         'timeMin' => date('c'),
     );
     $results = $service->events->listEvents($calendarId, $optParams);
+
+    if(isset($_SESSION['access_token'])) {
+    ?>
+        <a href="./disconnect_google.php" class="btn btn-danger btn-sm mb-3"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Disconnect Google</a>
+    <?php
+    }
     ?>
     <div class="card">
-        <div class="card-header"><h3>Upcoming Events</h3></div>
+        <div class="card-header"><h3>Your Upcoming Events</h3>
+            <a href="#" class="btn btn-sm btn-primary"><i class="fa-solid fa-plus"></i> Add an Event</a>
+        </div>
         <?php
         if (count($results->getItems()) == 0) {
             echo "<div class='card-body'><p>No upcoming events.</p></div>";
